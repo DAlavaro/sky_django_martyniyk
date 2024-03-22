@@ -1,8 +1,12 @@
 # main/view.py
 from django.shortcuts import render
 
+from app.catalog.models import Product, Category
+
 
 def index(request):
+    prod = Product.objects.all()
+    cat = Category.objects.all()
     template = 'catalog/index.html'
     context = {
         'title': 'Skystore',
